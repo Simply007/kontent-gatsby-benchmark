@@ -1,6 +1,8 @@
+console.log(process.env.NODE_ENV)
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
 
 module.exports = {
   siteMetadata: {
@@ -14,7 +16,7 @@ module.exports = {
       resolve: '@kentico/gatsby-source-kontent',
       options: {
         projectId: process.env.KONTENT_PROJECT_ID, // Fill in your Project ID
-        languageCodenames: KONTENT_LANGUAGE_CODENAMES && KONTENT_LANGUAGE_CODENAMES.split(',')
+        languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES && process.env.KONTENT_LANGUAGE_CODENAMES.split(',')
       },
     },
   ],
