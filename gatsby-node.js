@@ -21,7 +21,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.articles.nodes.map(article => {
     createPage({
-      path: article.fields.slug,
+      path: "/" + article.elements.slug.value,
       component: require.resolve(`./src/templates/article.js`),
       context: {
         slug: article.elements.slug.value,

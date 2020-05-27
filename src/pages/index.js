@@ -9,7 +9,7 @@ const Index = ({ data }) => {
       <ul>
         {data.articles.nodes.map(article => (
           <li>
-            <Link to={article.elements.slug,value}>{article.element.title.value}</Link>
+            <Link to={article.elements.slug.value}>{article.elements.title.value}</Link>
           </li>
         ))}
       </ul>
