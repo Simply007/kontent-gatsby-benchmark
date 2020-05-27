@@ -25,7 +25,7 @@ export default Article
 
 export const query = graphql`
   query($slug: String!){
-    article: kontentItemArticle(elements: {slug: {eq: $slug }}) {
+    article: kontentItemArticle(elements: {slug: {value: {eq: $slug }}}) {
       elements {
         title{
           value
