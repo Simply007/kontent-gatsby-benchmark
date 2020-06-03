@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import Layout from "../components/layout_1"
 
 const Article = ({ data }) => {
@@ -9,12 +9,11 @@ const Article = ({ data }) => {
       <Link to="/">Go back to index page</Link>
       <div>
         <h2>{data.article.elements.title.value}</h2>
-        {/* {data.article.relationships.field_image.localFile.childImageSharp ? (
-          <Img fluid={data.article.relationships.field_image.localFile.childImageSharp.fluid} />
+        {data.article.elements.image.value.length > 0 ? (
+          <Img fluid={data.article.elements.image.value[0].fluid} />
         ) : (
           <div>Image can't be displayed</div>
-        )} */}
-        <pre>Image url: {data.article.elements.image.value[0].url}</pre>
+        )}
         <div dangerouslySetInnerHTML={{ __html: data.article.elements.content.value }} />
       </div>
     </Layout>
@@ -35,7 +34,9 @@ export const query = graphql`
         }
         image{
           value {
-            url
+            fluid(maxWidth: 960) {
+              ...KontentAssetFluid
+            }
           }
         }
       }

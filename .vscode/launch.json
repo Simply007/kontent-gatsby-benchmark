@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "protocol": "inspector",
-      "name": "Gatsby develop",
+      "name": "Gatsby Develop",
       "program": "${workspaceFolder}/node_modules/gatsby/dist/bin/gatsby",
       "args": [
         "develop"
@@ -23,13 +23,29 @@
       ],
       "restart": true,
       "internalConsoleOptions": "neverOpen",
-      "env": { 
+      "env": {
         "NODE_ENV": "development",
         // "DEBUG": "gatsby:*" 
       },
       "console": "integratedTerminal",
       "sourceMaps": false,
       "outFiles": []
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Updater",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\update-article.js",
+      "env": {
+        "NODE_ENV": "development",
+      },
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ],
+      "console": "integratedTerminal"
     }
   ]
 }

@@ -14,9 +14,10 @@ module.exports = {
     {
       resolve: '@kentico/gatsby-source-kontent',
       options: {
-        projectId: process.env.KONTENT_PROJECT_ID, // Fill in your Project ID
-        languageCodenames: process.env.KONTENT_LANGUAGE_CODENAMES && process.env.KONTENT_LANGUAGE_CODENAMES.split(',')
+        projectId: process.env.BENCHMARK_KONTENT_PROJECT_ID, // Fill in your Project ID
+        languageCodenames: process.env.BENCHMARK_KONTENT_LANGUAGE_CODENAMES && process.env.BENCHMARK_KONTENT_LANGUAGE_CODENAMES.split(',')
       },
     },
+    `@rshackleton/gatsby-transformer-kontent-image`,
   ],
 }

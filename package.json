@@ -9,10 +9,12 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "data-update": "cross-env NODE_ENV=production node update-article.js"
   },
   "dependencies": {
     "@kentico/gatsby-source-kontent": "^6.0.1",
+    "@rshackleton/gatsby-transformer-kontent-image": "^2.0.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.40",
@@ -23,8 +25,11 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@kentico/kontent-delivery": "^9.1.1",
+    "@kentico/kontent-management": "^0.3.19",
     "cross-env": "^7.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rxjs": "^6.5.5"
   },
   "repository": {
     "type": "git",
